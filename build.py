@@ -15,7 +15,7 @@ os.system("cp {} ./env/bin/vul".format(binary))
 os.system("cd env")
 os.system('''docker build -t "problem_{}" ./env/'''.format(port))
 
-cmd = '''docker run -p "0.0.0.0:{}:6999" -h ctf-service --name="problem_{}" problem_{} &'''.format(port, port, port)
+cmd = '''nohup docker run -p "{}:6999" -h zjgsuctf --name="problem_{}" problem_{} >> problem_{}.log &'''.format(port, port, port, port)
 print '[DEBUG]', cmd
 os.system(cmd)
 print "======================================"
