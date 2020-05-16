@@ -33,3 +33,22 @@ If you want to capture challenge traffic, just run `tcpdump` on the host. Here i
 ```bash
 tcpdump -w helloworld.pcap -i eth0 port pub_port
 ```
+
+## PS
+
+In Ubuntu 20.04, `/lib*` are soft link files to `/usr/lib*` (Specific Dockerfile see `Dockerfile.U20`):
+
+```bash
+$ ls -l /
+total 48
+lrwxrwxrwx   1 root root    7 Apr 23 19:06 bin -> usr/bin
+drwxr-xr-x   2 root root 4096 Apr 15 19:09 boot
+drwxr-xr-x  10 root root 2920 May 16 09:29 dev
+drwxr-xr-x   1 root root 4096 May 16 09:29 etc
+drwxr-xr-x   1 root root 4096 May 16 09:30 home
+lrwxrwxrwx   1 root root    7 Apr 23 19:06 lib -> usr/lib
+lrwxrwxrwx   1 root root    9 Apr 23 19:06 lib32 -> usr/lib32
+lrwxrwxrwx   1 root root    9 Apr 23 19:06 lib64 -> usr/lib64
+lrwxrwxrwx   1 root root   10 Apr 23 19:06 libx32 -> usr/libx32
+...
+```
