@@ -22,10 +22,3 @@ print "======================================"
 print "       nc 0.0.0.0 " + port
 print "======================================"
 
-"""
-os.system('''echo "#!/bin/sh" > ./env/start.sh''')
-os.system('''echo "ncat -vc /home/ctf/vul -kl 6999" >> ./env/start.sh''')
-os.system('''echo "/etc/init.d/xinetd start"        >> ./env/start.sh''')
-os.system('''echo " sleep infinity"                 >> ./env/start.sh''')
-"""
-
