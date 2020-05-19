@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-RUN sed -i -re 's/([a-z]{2}\.)?archive.ubuntu.com|security.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list /etc/apt/sources.list && \
+RUN sed -i -re 's/([a-z]{2}\.)?archive.ubuntu.com|security.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list && \
     apt-get update && apt-get -y dist-upgrade && \
     apt-get install -y lib32z1 xinetd && \
     apt-get install -y nmap vim
